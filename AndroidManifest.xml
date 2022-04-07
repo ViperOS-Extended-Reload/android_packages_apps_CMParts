@@ -91,7 +91,7 @@
             android:name=".PrivacySettings"
             android:label="@string/privacy_settings_title"
             android:targetActivity="PartsActivity">
-            <intent-filter android:priority="1">
+            <intent-filter android:priority="3">
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
                 <action android:name="org.cyanogenmod.cmparts.PRIVACY_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -111,6 +111,8 @@
         </activity-alias>
 
         <!-- Button settings (dashboard) -->
+        <activity android:name=".gestures.KeyHandler" />
+
         <activity android:name=".gestures.KeyHandler" />
 
         <!-- Profiles settings (dashboard) -->
@@ -136,6 +138,19 @@
                 android:name="org.cyanogenmod.settings.summary.key"
                 android:value="profiles_settings" />
         </activity-alias>
+
+        <activity android:name=".profiles.NFCProfile">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="cm/profile" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".profiles.NFCProfileSelect"
+            android:label="@string/profile_select"
+            android:excludeFromRecents="true"/>
 
         <activity android:name=".profiles.NFCProfile">
             <intent-filter>

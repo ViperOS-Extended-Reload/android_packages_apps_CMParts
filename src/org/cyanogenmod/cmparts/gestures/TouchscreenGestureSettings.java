@@ -39,7 +39,6 @@ import org.cyanogenmod.cmparts.utils.ResourceUtils;
 import java.lang.System;
 
 public class TouchscreenGestureSettings extends SettingsPreferenceFragment {
-
     private static final String KEY_TOUCHSCREEN_GESTURE = "touchscreen_gesture";
     private static final String TOUCHSCREEN_GESTURE_TITLE = KEY_TOUCHSCREEN_GESTURE + "_%s_title";
 
